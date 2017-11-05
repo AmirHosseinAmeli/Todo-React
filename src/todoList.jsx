@@ -7,7 +7,7 @@ export class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todoList: JSON.parse(localStorage.getItem('todoList'))
+      todoList: JSON.parse(localStorage.getItem('todoList')) || []
     };
     this.addNewTodo = this.addNewTodo.bind(this);
     this.changeTaskStatus = this.changeTaskStatus.bind(this);
