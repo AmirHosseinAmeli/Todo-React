@@ -12,7 +12,7 @@ export class TodoCreate extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.state.text.trim()) {
-      this.props.addTodo(this.state.text)
+      this.props.addTodo(this.props.personId, this.state.text)
       this.setState({text: ''})
     }
   }

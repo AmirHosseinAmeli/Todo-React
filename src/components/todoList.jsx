@@ -1,32 +1,12 @@
 import React, {Component} from 'react';
-import {TodoItems} from './todoItems';
-import {TodoCreate} from './todoCreate';
+import {Link} from 'react-router-dom'
 
-export class Todo extends Component {
-
-  componentDidUpdate() {
-    localStorage.setItem('todoList', JSON.stringify(this.props.todos));
-  }
-
+export class TodoList extends Component {
   render() {
-    const self = this;
-    let todoItems = this.props.todos.map(function(item) {
-      return (<TodoItems key={item.id} item={item} actions={self.props.actions}/>);
-    });
+    let path = '/todos/' + this.props.todoList.name;
     return (
-      <div>
-      <TodoCreate addTodo={this.props.actions.addTodo}/>
-      <br/><br/><br/>
-      <table>
-        <tbody>
-          <tr>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Delete</th>
-          </tr>
-          {todoItems}
-        </tbody>
-      </table>
-    </div>);
+      <li>
+      <Link to={path}>{this.props.todoList.name}</Link>
+    </li>)
   }
 }
