@@ -21,7 +21,7 @@ const App = ({todoLists, actions}) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/todos" render={() => (<TodoLists todoLists={todoLists} createTodo={actions.createTodo}/>)}/>
-        {todoLists.map(todoList => (<Route key={todoList.personId} exact="exact" path={'/todos/' + todoList.name} render={() => (<Todo todoList={todoList} actions={actions}/>)} />))}
+        {todoLists.map(todoList => (<Route key={todoList.personId} exact path={'/todos/' + todoList.name} render={() => (<Todo todoList={todoList} actions={actions}/>)}/>))}
         <Redirect path="*" to="/todos"/>
       </Switch>
     </BrowserRouter>

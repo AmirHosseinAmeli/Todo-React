@@ -13,12 +13,13 @@ export class Todo extends Component {
     return (
       <div>
       <p className="App-intro">{this.props.todoList.name} Tasks:</p>
-      <TodoCreate personId={this.props.todoList.personId} addTodo={this.props.actions.addTodo}/>
+      <TodoCreate personId={this.props.todoList.personId} fetchDescription={this.props.actions.fetchDescription}/>
       <br/><br/><br/>
       <table>
         <tbody>
           <tr>
             <th>Task</th>
+            <th>Description</th>
             <th>Status</th>
             <th>Delete</th>
           </tr>

@@ -14,7 +14,8 @@ function todoLists(state = initialState, action) {
               id: todos.todos.reduce((maxId, todo) => Math.max(todo.id,
                 maxId), -1) + 1,
               done: false,
-              text: action.text
+              text: action.text,
+              description: action.description
             }
           ]
         } :
